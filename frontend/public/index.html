@@ -1,151 +1,336 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="A product of emergent.sh" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAdmin - Професійна IT підтримка</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" onclick="scrollToSection('hero')">
+                    UAdmin
+                </div>
+                <nav class="nav">
+                    <button class="nav-btn" onclick="scrollToSection('services')">ПОСЛУГИ</button>
+                    <button class="nav-btn" onclick="scrollToSection('about')">ПРО НАС</button>
+                    <button class="nav-btn" onclick="scrollToSection('contact')">КОНТАКТИ</button>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Emergent | Fullstack App</title>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- Animated Background -->
+        <div class="hero-bg">
+            <!-- Network Pattern -->
+            <div class="network-pattern">
+                <svg class="network-svg" viewBox="0 0 1920 1080">
+                    <defs>
+                        <pattern id="network" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                            <circle cx="50" cy="50" r="2" fill="#60a5fa" opacity="0.5"/>
+                            <line x1="50" y1="50" x2="100" y2="0" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+                            <line x1="50" y1="50" x2="100" y2="100" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+                            <line x1="50" y1="50" x2="0" y2="100" stroke="#60a5fa" stroke-width="0.5" opacity="0.3"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#network)"/>
+                </svg>
+            </div>
+            
+            <!-- Floating Particles -->
+            <div class="particles-container"></div>
+        </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        <div class="hero-content">
+            <h1 class="hero-title">UAdmin</h1>
+            <p class="hero-subtitle">
+                Професійна IT підтримка та технічні рішення для бізнесу та дому по всій Україні
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('services')">
+                    Наші Послуги
+                </button>
+                <button class="btn btn-secondary" onclick="window.open('https://t.me/uadmin_support_bot', '_blank')">
+                    Замовити через Telegram
+                </button>
+            </div>
+        </div>
+    </section>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        <a
-            id="emergent-badge"
-            target="_blank"
-            href="https://app.emergent.sh/?utm_source=emergent-badge"
-            style="
-                display: flex !important;
-                align-items: center !important;
-                position: fixed !important;
-                bottom: 20px;
-                right: 20px;
-                text-decoration: none;
-                padding: 6px 10px;
-                font-family: -apple-system, BlinkMacSystemFont,
-                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell,
-                    &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
-                    sans-serif !important;
-                font-size: 12px !important;
-                z-index: 9999 !important;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-                border-radius: 8px !important;
-                background-color: #ffffff !important;
-                border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            "
-        >
-            <div
-                style="display: flex; flex-direction: row; align-items: center"
-            >
-                <img
-                    style="width: 20px; height: 20px; margin-right: 8px"
-                    src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4"
-                />
-                <p
-                    style="
-                        color: #000000;
-                        font-family: -apple-system, BlinkMacSystemFont,
-                            &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu,
-                            Cantarell, &quot;Open Sans&quot;,
-                            &quot;Helvetica Neue&quot;, sans-serif !important;
-                        font-size: 12px !important;
-                        align-items: center;
-                        margin-bottom: 0;
-                    "
-                >
-                    Made with Emergent
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Наші послуги</h2>
+                <p class="section-subtitle">
+                    Комплексні IT рішення для вашого бізнесу та дому
                 </p>
             </div>
-        </a>
-        <script>
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
-                    (e._i = []),
-                    (e.init = function (i, s, a) {
-                        function g(t, e) {
-                            var o = e.split(".");
-                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                                (t[e] = function () {
-                                    t.push(
-                                        [e].concat(
-                                            Array.prototype.slice.call(
-                                                arguments,
-                                                0,
-                                            ),
-                                        ),
-                                    );
-                                });
-                        }
-                        ((p = t.createElement("script")).type =
-                            "text/javascript"),
-                            (p.crossOrigin = "anonymous"),
-                            (p.async = !0),
-                            (p.src =
-                                s.api_host.replace(
-                                    ".i.posthog.com",
-                                    "-assets.i.posthog.com",
-                                ) + "/static/array.js"),
-                            (r =
-                                t.getElementsByTagName(
-                                    "script",
-                                )[0]).parentNode.insertBefore(p, r);
-                        var u = e;
-                        for (
-                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
-                                n = 0;
-                            n < o.length;
-                            n++
-                        )
-                            g(u, o[n]);
-                        e._i.push([i, s, a]);
-                    }),
-                    (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
-                api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-            });
-        </script>
-    </body>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🖥️</div>
+                    <h3 class="service-title">Налаштування ПК і ноутбуків</h3>
+                    <p class="service-description">Налаштування ПК, ноутбуків, Windows, програм</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📶</div>
+                    <h3 class="service-title">Мережі та Wi-Fi</h3>
+                    <p class="service-description">Підключення та налаштування Wi-Fi, роутерів, мереж</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💾</div>
+                    <h3 class="service-title">Резервне копіювання</h3>
+                    <p class="service-description">Резервне копіювання даних (1С, CRM, документи)</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📹</div>
+                    <h3 class="service-title">Відеоспостереження</h3>
+                    <p class="service-description">Встановлення камер відеоспостереження з доступом через смартфон</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🖨️</div>
+                    <h3 class="service-title">Обслуговування техніки</h3>
+                    <p class="service-description">Обслуговування принтерів, онлайн-кас, сканерів</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3 class="service-title">Підбір техніки</h3>
+                    <p class="service-description">Підбір техніки для бізнесу та дому</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3 class="service-title">Кібербезпека</h3>
+                    <p class="service-description">Консультації з кібербезпеки та стабільності</p>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <button class="btn btn-primary btn-large" onclick="window.open('https://t.me/uadmin_support_bot', '_blank')">
+                    Замовити через Telegram
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Чому обирають нас</h2>
+                <p class="section-subtitle">
+                    Надійний партнер для вирішення всіх ваших IT потреб
+                </p>
+            </div>
+
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">🌍</div>
+                    <h3 class="advantage-title">Віддалена підтримка</h3>
+                    <p class="advantage-description">По всій Україні</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">⏰</div>
+                    <h3 class="advantage-title">Без вихідних</h3>
+                    <p class="advantage-description">Працюємо тоді, коли потрібно вам</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">💰</div>
+                    <h3 class="advantage-title">Доступні ціни</h3>
+                    <p class="advantage-description">Чесність у кожному рішенні</p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">✅</div>
+                    <h3 class="advantage-title">Реальні результати</h3>
+                    <p class="advantage-description">Ніяких «розводів» — тільки результат</p>
+                </div>
+            </div>
+
+            <div class="about-cta">
+                <div class="cta-card">
+                    <h3 class="cta-title">Довіряйте професіоналам</h3>
+                    <p class="cta-text">
+                        Наша команда має багаторічний досвід роботи в сфері IT. Ми забезпечуємо швидке та якісне вирішення технічних проблем, 
+                        допомагаємо оптимізувати роботу вашої техніки та гарантуємо надійність наших рішень.
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="window.open('https://t.me/+i2B3mRXRBfxkN2Ji', '_blank')">
+                            Telegram канал
+                        </button>
+                        <button class="btn btn-instagram" onclick="window.open('https://instagram.com/uadmin_it', '_blank')">
+                            @uadmin_it
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Контакти</h2>
+                <p class="section-subtitle">
+                    Зв'яжіться з нами для отримання професійної IT підтримки
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3 class="contact-card-title">Зв'язок з нами</h3>
+                        
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-item-icon">📞</div>
+                                <div class="contact-item-content">
+                                    <p class="contact-item-label">Телефон</p>
+                                    <p class="contact-item-value">+38 (0__) ___-__-__</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-item-icon">📧</div>
+                                <div class="contact-item-content">
+                                    <p class="contact-item-label">Email</p>
+                                    <p class="contact-item-value">info@uadmin.com.ua</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-item-icon">📍</div>
+                                <div class="contact-item-content">
+                                    <p class="contact-item-label">Локація</p>
+                                    <p class="contact-item-value">По всій Україні</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3 class="contact-card-title">Соціальні мережі</h3>
+                        
+                        <div class="social-links">
+                            <button class="social-link social-telegram" onclick="window.open('https://t.me/uadmin_support_bot', '_blank')">
+                                <span class="social-icon">💬</span>
+                                <div class="social-content">
+                                    <p class="social-title">Telegram Bot</p>
+                                    <p class="social-subtitle">@uadmin_support_bot</p>
+                                </div>
+                            </button>
+
+                            <button class="social-link social-telegram" onclick="window.open('https://t.me/+i2B3mRXRBfxkN2Ji', '_blank')">
+                                <span class="social-icon">📢</span>
+                                <div class="social-content">
+                                    <p class="social-title">Telegram канал</p>
+                                    <p class="social-subtitle">Наші новини та оновлення</p>
+                                </div>
+                            </button>
+
+                            <button class="social-link social-instagram" onclick="window.open('https://instagram.com/uadmin_it', '_blank')">
+                                <span class="social-icon">📷</span>
+                                <div class="social-content">
+                                    <p class="social-title">Instagram</p>
+                                    <p class="social-subtitle">@uadmin_it</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <div class="contact-card">
+                        <h3 class="contact-card-title">Напишіть нам</h3>
+                        
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label class="form-label">Ім'я</label>
+                                <input type="text" class="form-input" placeholder="Ваше ім'я" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" placeholder="your@email.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Телефон</label>
+                                <input type="tel" class="form-input" placeholder="+38 (0__) ___-__-__">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Повідомлення</label>
+                                <textarea class="form-textarea" rows="5" placeholder="Опишіть вашу проблему або запит..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full">
+                                Відправити повідомлення
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-title">UAdmin</h3>
+                    <p class="footer-text">
+                        Професійна IT підтримка та технічні рішення для бізнесу та дому по всій Україні.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Послуги</h4>
+                    <ul class="footer-list">
+                        <li>Налаштування ПК і програм</li>
+                        <li>Мережі та Wi-Fi</li>
+                        <li>Резервне копіювання</li>
+                        <li>Відеоспостереження</li>
+                        <li>Кібербезпека</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Контакти</h4>
+                    <div class="footer-contacts">
+                        <p>📧 info@uadmin.com.ua</p>
+                        <p>📞 +38 (0__) ___-__-__</p>
+                        <p>📍 По всій Україні</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 UAdmin. Всі права захищені.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
